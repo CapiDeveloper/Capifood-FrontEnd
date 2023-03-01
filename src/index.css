@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+    .scrollbar::-webkit-scrollbar {
+      width: 15px;
+      height: 15px;
+    }
+  
+    .scrollbar::-webkit-scrollbar-track {
+      /* Para que los se redonde el bg del scroll */
+      /* border-radius: 100vh; */
+      background: #84B1FF;
+    }
+  
+    .scrollbar::-webkit-scrollbar-thumb {
+      background: #497FDC;
+      /* Para que los se redonde el borde del scroll */
+      /* border-radius: 100vh; */
+    }
+  
+    .scrollbar::-webkit-scrollbar-thumb:hover {
+      background: #345EA8;
+    }
+    /* scroll invisible */
+    .not-appearance-scrollbar::-webkit-scrollbar{
+      height: 0px;
+    }
+    .not-appearance-scrollbar-width::-webkit-scrollbar{
+      width:10px;
+    }
+    /* diseño para barras de estadistica al hacer hover */
+    .barra:hover{
+      opacity: .6;
+    }
+    /* Diseño para loading infinito */
+    .loading {
+      display: inline-block;
+      width: 50px;
+      height: 50px;
+      border: 3px solid #345EA8;
+      border-radius: 50%;
+      border-top-color: #fff;
+      animation: spin 1s ease-in-out infinite;
+      -webkit-animation: spin 1s ease-in-out infinite;
+    }
+    
+    @keyframes spin {
+      to { -webkit-transform: rotate(360deg); }
+    }
+    @-webkit-keyframes spin {
+      to { -webkit-transform: rotate(360deg); }
+    }
+  }
+  .animate-y{
+    animation-name: transicion;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+  }
+  @keyframes transicion {
+    0%{
+      transform: translateY(0);
+    }
+    50%{
+      transform: translateY(3%);
+    }
+    100%{
+      transform: translateY(0);
+    }
+  }
+  .animate-circle{
+    -webkit-animation: popo 20s linear infinite;
+    animation: popo 15s linear infinite;
+  }
+  @keyframes popo{
+    0% { 
+      transform: rotate(0deg)translate(-1px)rotate(0deg);
+     }
+    /* 50% { 
+    transform: rotate(0deg)translate(-150px)rotate(0deg);
+    } */
+     100%{
+      transform: rotate(0deg)translate(-1px)rotate(360deg);
+     }
+  }
